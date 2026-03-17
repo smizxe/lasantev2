@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), sans-serif;
+  color: #374151; /* text-gray-700 */
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: #f8c131;
+  color: #ffffff;
+}
+
+@layer utilities {
+  .font-sans {
+    font-family: var(--font-sans), sans-serif;
+  }
+  .font-serif {
+    font-family: var(--font-serif), serif;
+  }
+  .gradient-primary {
+    background: linear-gradient(to right, #f37435, #f8c131);
+  }
+  .text-gradient {
+    background: linear-gradient(to right, #f37435, #f8c131);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
