@@ -1,6 +1,3 @@
-import Header from '@/components/Header';
-import TopBar from '@/components/TopBar';
-import Footer from '@/components/Footer';
 import { Link } from '@/i18n/routing';
 import { ChevronRight, Home, ArrowRight } from 'lucide-react';
 
@@ -63,8 +60,6 @@ const posts = [
 export default function NewsPage() {
   return (
     <>
-      <TopBar />
-      <Header />
       
       {/* Banner */}
       <div className="relative h-[300px] bg-[#1a2b4a] overflow-hidden">
@@ -145,8 +140,6 @@ export default function NewsPage() {
           </button>
         </div>
       </div>
-      
-      <Footer />
     </>
   );
 }

@@ -1,6 +1,3 @@
-import Header from '@/components/Header';
-import TopBar from '@/components/TopBar';
-import Footer from '@/components/Footer';
 import { Link } from '@/i18n/routing';
 import { ChevronRight, Home, CheckCircle2 } from 'lucide-react';
 import Certifications from '@/components/Certifications';
@@ -22,9 +19,6 @@ const categories = [
 export default function AboutUsPage() {
   return (
     <>
-      <TopBar />
-      <Header />
-      
       {/* Banner */}
       <div className="relative h-[300px] bg-[#1a2b4a] overflow-hidden">
         <img 
@@ -108,8 +102,6 @@ export default function AboutUsPage() {
           </div>
         </div>
       </div>
-      
-      <Footer />
     </>
   );
 }

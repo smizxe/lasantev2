@@ -1,6 +1,3 @@
-import Header from '@/components/Header';
-import TopBar from '@/components/TopBar';
-import Footer from '@/components/Footer';
 import { Link } from '@/i18n/routing';
 import { ChevronRight, Home, MapPin, Phone, Mail, Clock } from 'lucide-react';
 
@@ -12,8 +9,6 @@ export const metadata = {
 export default function ContactUsPage() {
   return (
     <>
-      <TopBar />
-      <Header />
       
       {/* Banner */}
       <div className="relative h-[300px] bg-[#1a2b4a] overflow-hidden">
@@ -155,8 +150,6 @@ export default function ContactUsPage() {
           loading="lazy"
         ></iframe>
       </div>
-      
-      <Footer />
     </>
   );
 }
