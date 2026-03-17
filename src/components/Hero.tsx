@@ -2,46 +2,71 @@ import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <section className="relative h-[85vh] w-full flex items-center justify-center overflow-hidden">
-      <img 
-        src="/images/hero-banner.png" 
-        alt="Luxury Bedroom" 
-        className="absolute inset-0 w-full h-full object-cover"
+    <section className="relative min-h-[92vh] w-full flex items-end overflow-hidden bg-[#1A1614]">
+      {/* Background image */}
+      <img
+        src="/images/hero-banner.png"
+        alt="La Santé Premium Bedding"
+        className="absolute inset-0 w-full h-full object-cover object-center opacity-55"
       />
-      <div className="absolute inset-0 bg-black/40"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-      
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto mt-16 animate-fade-in-up">
-        <span className="text-white text-base md:text-lg tracking-[0.2em] uppercase mb-6 block drop-shadow-md">
-          Lasante De Paris - L'amour De Paris
-        </span>
-        <h1 className="font-serif font-medium text-4xl md:text-6xl lg:text-7xl text-white tracking-tight leading-[1.1] mb-8 drop-shadow-lg">
-          Experience the Love of Paris <br /> 
-          <span className="text-[#C9A96E]">Premium French Bedding</span>
-        </h1>
-        <p className="text-gray-200 text-xl mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-          Healthcare products for consumers, elegant modern French design, high durability, ultimate softness, and absolute safety for elegant living.
+
+      {/* Gradient overlay — bottom heavy so text is readable */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1A1614] via-[#1A1614]/50 to-transparent" />
+
+      {/* Thin gold horizontal rule across hero */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#B8924A]/60 to-transparent" />
+
+      {/* Content */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pb-20 lg:pb-28">
+
+        {/* Label */}
+        <p className="label text-[#B8924A] mb-6 opacity-0 animate-fade-up delay-100" style={{animationFillMode:'forwards'}}>
+          — Lasante De Paris &nbsp;·&nbsp; L'Art Du Sommeil —
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
-          <Link 
-            href="/products" 
-            className="w-full sm:w-auto px-10 py-4 rounded-full gradient-primary text-white font-medium text-lg hover:shadow-lg hover:shadow-[#C9A96E]/30 transition-all transform hover:-translate-y-0.5"
-          >
+
+        {/* Main headline */}
+        <h1 className="font-serif font-light text-white leading-[0.92] tracking-[-0.02em] mb-8 opacity-0 animate-fade-up delay-200" style={{fontSize:'clamp(3.2rem,8vw,7.5rem)', animationFillMode:'forwards'}}>
+          Parisian Elegance.<br />
+          <span className="text-gradient-gold">Vietnamese Precision.</span><br />
+          Global Distribution.
+        </h1>
+
+        {/* Sub-copy — export pitch */}
+        <p className="font-sans font-light text-[#C8B8A8] text-lg lg:text-xl max-w-2xl mb-12 leading-relaxed opacity-0 animate-fade-up delay-300" style={{animationFillMode:'forwards'}}>
+          We manufacture over <strong className="text-white font-normal">1,000,000 premium bedding products</strong> annually —
+          supplying hotels, retail chains, and distribution partners across Asia, Europe, and beyond.
+          Source directly from the manufacturer.
+        </p>
+
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row items-start gap-4 opacity-0 animate-fade-up delay-400" style={{animationFillMode:'forwards'}}>
+          <Link href="/contact" className="btn-gold">
+            Request Export Pricing
+          </Link>
+          <Link href="/products" className="btn-outline">
             Explore Collections
           </Link>
-          <Link 
-            href="/contact" 
-            className="w-full sm:w-auto px-10 py-4 rounded-full bg-white/10 backdrop-blur-sm text-white border border-white/30 font-medium text-lg hover:bg-white hover:text-[#2d2d2d] transition-all"
-          >
-            Request a Quote
-          </Link>
+        </div>
+
+        {/* Stats strip */}
+        <div className="mt-16 pt-8 border-t border-white/10 grid grid-cols-3 gap-8 max-w-lg opacity-0 animate-fade-up delay-500" style={{animationFillMode:'forwards'}}>
+          {[
+            { num: '10+',   label: 'Years Experience' },
+            { num: '500+',  label: 'Global Partners'  },
+            { num: '1M+',   label: 'Units Delivered'  },
+          ].map((s) => (
+            <div key={s.label}>
+              <p className="font-serif font-light text-3xl text-[#D4AA6E] leading-none mb-1">{s.num}</p>
+              <p className="label text-[#7A6E65]" style={{fontSize:'0.65rem'}}>{s.label}</p>
+            </div>
+          ))}
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-3 z-10">
-        <div className="w-10 h-1 bg-white rounded-full"></div>
-        <div className="w-2 h-2 bg-white/50 rounded-full cursor-pointer hover:bg-white transition-colors"></div>
-        <div className="w-2 h-2 bg-white/50 rounded-full cursor-pointer hover:bg-white transition-colors"></div>
+      {/* Bottom scroll indicator */}
+      <div className="absolute bottom-8 right-8 lg:right-12 flex flex-col items-center gap-2 z-10 opacity-40">
+        <span className="label text-white" style={{fontSize:'0.6rem', writingMode:'vertical-rl', letterSpacing:'0.25em'}}>Scroll</span>
+        <div className="w-px h-12 bg-white/50" />
       </div>
     </section>
   );

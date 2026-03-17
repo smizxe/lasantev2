@@ -1,50 +1,61 @@
-import { Star } from 'lucide-react';
+const testimonials = [
+  {
+    text: 'We have been sourcing from La Santé for three years. Their MOQ flexibility, consistent EU-grade quality, and on-time delivery have been crucial to scaling our retail network across the region.',
+    name: 'Ms. Lan Anh',
+    role: 'CEO, Premium Retail Chain · Hanoi',
+    initial: 'L',
+  },
+  {
+    text: 'Our 5-star hotel group equips over 800 rooms with La Santé bedding. Guest satisfaction scores on sleep quality improved noticeably within the first season. The quality-to-cost ratio is unmatched.',
+    name: 'Mr. Hoang Nam',
+    role: 'Procurement Director · Da Nang Hospitality Group',
+    initial: 'H',
+  },
+  {
+    text: "La Santé's export team made onboarding seamless. Certifications were in order, shipments arrived on schedule, and the private label packaging looked exceptional. Exactly what we needed for our market.",
+    name: 'Ms. Minh Thu',
+    role: 'International Distribution Partner · Southeast Asia',
+    initial: 'M',
+  },
+];
 
 export default function Testimonials() {
-  const testimonials = [
-    {
-      text: "Lasante's Tencel collection is truly this season's best-seller. The quality matches European premium brands but at a much more competitive price. The export packaging is excellent.",
-      name: "Ms. Lan Anh",
-      role: "Distributor, Hanoi",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150"
-    },
-    {
-      text: "We just equipped our entire hotel chain with Latalia mattresses and bedding. Customer feedback on their sleep quality has been overwhelmingly positive. Highly recommended for long-term partnerships.",
-      name: "Mr. Hoang Nam",
-      role: "Hotel Owner, Da Nang",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150"
-    },
-    {
-      text: "As a retail partner, working with Lasante Vietnam has been a major turning point. The customer service and dealership policies are always transparent, and deliveries are punctual.",
-      name: "Ms. Minh Thu",
-      role: "Retail CEO, HCMC",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150"
-    }
-  ];
-
   return (
-    <section className="py-24 bg-[#f8f8f8]">
+    <section className="py-28 bg-[#FAF7F2]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <h2 className="font-serif font-medium text-4xl lg:text-5xl text-[#2d2d2d] tracking-tight text-center mb-16 hover:text-[#C9A96E] transition-colors">
-          Trusted Partners
-        </h2>
-        
+
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <p className="label text-[#B8924A] mb-4">— Partner Voices</p>
+            <h2 className="font-serif font-light text-[#1A1614] leading-[0.92]" style={{fontSize:'clamp(2.4rem,4vw,3.8rem)'}}>
+              Trusted by Businesses<br />Across the Region
+            </h2>
+          </div>
+          {/* Gold rule accent */}
+          <div className="hidden md:flex flex-col items-end gap-1">
+            <div className="w-20 h-px bg-[#B8924A]" />
+            <div className="w-10 h-px bg-[#D4AA6E]" />
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((item, idx) => (
-            <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-50 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-              <div className="flex items-center gap-1 text-[#C9A96E] mb-6 transform group-hover:scale-110 transition-transform origin-left">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} strokeWidth={2} className="w-5 h-5 fill-current" />
-                ))}
-              </div>
-              <p className="text-gray-600 text-lg italic mb-8 relative z-10">"{item.text}"</p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden border-2 border-transparent group-hover:border-[#C9A96E] transition-colors">
-                  <img src={item.avatar} alt="Avatar" className="w-full h-full object-cover" />
+          {testimonials.map((t, idx) => (
+            <div
+              key={idx}
+              className="bg-[#F0EAE0] p-8 lg:p-10 flex flex-col group hover:bg-[#1A1614] transition-colors duration-500"
+            >
+              {/* Decorative quote */}
+              <span className="font-serif text-6xl text-[#D4AA6E] leading-none mb-6 group-hover:text-[#B8924A] transition-colors duration-500">"</span>
+              <p className="font-sans font-light text-[#4A3F38] text-base leading-loose mb-8 flex-1 group-hover:text-[#C8B8A8] transition-colors duration-500">
+                {t.text}
+              </p>
+              <div className="flex items-center gap-4 pt-6 border-t border-[#E8DFD4] group-hover:border-[#3A3330] transition-colors duration-500">
+                <div className="w-11 h-11 bg-[#B8924A] flex items-center justify-center shrink-0">
+                  <span className="font-serif text-white text-xl font-light">{t.initial}</span>
                 </div>
                 <div>
-                  <h4 className="font-medium text-[#2d2d2d] text-lg group-hover:text-[#C9A96E] transition-colors">{item.name}</h4>
-                  <p className="text-gray-500 text-base">{item.role}</p>
+                  <p className="font-sans font-medium text-[#2E2924] text-sm group-hover:text-white transition-colors duration-500">{t.name}</p>
+                  <p className="label text-[#7A6E65] group-hover:text-[#5A5050] transition-colors duration-500" style={{fontSize:'0.6rem'}}>{t.role}</p>
                 </div>
               </div>
             </div>

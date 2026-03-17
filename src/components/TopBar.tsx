@@ -1,26 +1,33 @@
-import { Mail, Phone, Facebook, Instagram, MessageCircle, ChevronDown } from 'lucide-react';
+import { Mail, Phone, Facebook, Instagram, MessageCircle } from 'lucide-react';
 
 export default function TopBar() {
   return (
-    <div className="bg-[#2d2d2d] text-gray-300 py-2.5 px-6 lg:px-12 text-sm flex flex-col sm:flex-row justify-between items-center z-50 relative">
+    <div className="bg-[#1A1614] text-[#9A8E85] py-2.5 px-6 lg:px-12 text-[11px] flex flex-col sm:flex-row justify-between items-center z-50 relative tracking-widest uppercase">
       <div className="flex items-center gap-6 mb-2 sm:mb-0">
-        <a href="mailto:export@lasantevietnam.vn" className="flex items-center gap-2 hover:text-white transition-colors">
-          <Mail strokeWidth={1.5} className="w-4 h-4" /> export@lasantevietnam.vn
+        <a href="mailto:export@lasantevietnam.vn" className="flex items-center gap-2 hover:text-[#D4AA6E] transition-colors duration-300">
+          <Mail strokeWidth={1.5} className="w-3.5 h-3.5" />
+          <span>export@lasantevietnam.vn</span>
         </a>
-        <a href="tel:+84921999066" className="flex items-center gap-2 hover:text-white transition-colors">
-          <Phone strokeWidth={1.5} className="w-4 h-4" /> +84 921 999 066
+        <span className="w-px h-3 bg-[#3A3330]" />
+        <a href="tel:+84921999066" className="flex items-center gap-2 hover:text-[#D4AA6E] transition-colors duration-300">
+          <Phone strokeWidth={1.5} className="w-3.5 h-3.5" />
+          <span>+84 921 999 066</span>
         </a>
       </div>
-      <div className="flex items-center gap-6">
-        <div className="flex items-center gap-4">
-          <a href="#" className="hover:text-white transition-colors"><Facebook strokeWidth={1.5} className="w-4 h-4" /></a>
-          <a href="#" className="hover:text-white transition-colors"><Instagram strokeWidth={1.5} className="w-4 h-4" /></a>
-          <a href="#" className="hover:text-white transition-colors"><MessageCircle strokeWidth={1.5} className="w-4 h-4" /></a>
+      <div className="flex items-center gap-5">
+        <span className="text-[#D4AA6E] hidden sm:inline">Official Export Partner · Vietnam → World</span>
+        <span className="w-px h-3 bg-[#3A3330] hidden sm:block" />
+        <div className="flex items-center gap-3.5">
+          <a href="#" className="hover:text-[#D4AA6E] transition-colors duration-300">
+            <Facebook strokeWidth={1.5} className="w-3.5 h-3.5" />
+          </a>
+          <a href="#" className="hover:text-[#D4AA6E] transition-colors duration-300">
+            <Instagram strokeWidth={1.5} className="w-3.5 h-3.5" />
+          </a>
+          <a href="#" className="hover:text-[#D4AA6E] transition-colors duration-300">
+            <MessageCircle strokeWidth={1.5} className="w-3.5 h-3.5" />
+          </a>
         </div>
-        <div className="h-4 w-px bg-gray-600"></div>
-        <button className="flex items-center gap-1 hover:text-white transition-colors">
-          EN <ChevronDown strokeWidth={1.5} className="w-3 h-3" />
-        </button>
       </div>
     </div>
   );

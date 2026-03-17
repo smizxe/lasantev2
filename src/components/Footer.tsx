@@ -3,84 +3,113 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-[#1a1a1a] pt-20 pb-10 border-t border-gray-800">
+    <footer className="bg-[#1A1614] pt-20 pb-10 border-t border-[#2E2924]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-          
-          {/* Col 1: Brand */}
-          <div className="lg:pr-8">
-            <Link href="/" className="flex items-center mb-6 inline-block group gap-2">
-              <img src="/logo.png" alt="Lasante Vietnam" className="h-10 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity" />
+
+        {/* Top — brand + columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10 mb-16">
+
+          {/* Brand */}
+          <div className="lg:pr-6">
+            <Link href="/" className="inline-block mb-6">
+              <img src="/logo.png" alt="La Santé Vietnam" className="h-10 w-auto object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
             </Link>
-            <p className="text-gray-400 text-base leading-relaxed mb-6">
-              Exclusive manufacturer and distributor of French designer brands: Lasante' and Latalia. Elevating Vietnamese sleep through premium quality.
+            <p className="font-sans font-light text-[#5A5050] text-sm leading-loose mb-6">
+              Exclusive manufacturer of <em>La Santé De Paris</em> &amp; <em>LaTalia (UK)</em>.
+              Elevating sleep quality globally through French-inspired craftsmanship.
             </p>
-            <div className="flex items-center gap-4">
-              <Link href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#f37435] hover:text-white transition-colors hover:scale-110">
-                <Facebook strokeWidth={1.5} className="w-5 h-5" />
-              </Link>
-              <Link href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#f37435] hover:text-white transition-colors hover:scale-110">
-                <Instagram strokeWidth={1.5} className="w-5 h-5" />
-              </Link>
-              <Link href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#f37435] hover:text-white transition-colors hover:scale-110">
-                <Linkedin strokeWidth={1.5} className="w-5 h-5" />
-              </Link>
+            <div className="flex items-center gap-3">
+              {[Facebook, Instagram, Linkedin].map((Icon, i) => (
+                <Link key={i} href="#" className="w-9 h-9 border border-[#2E2924] flex items-center justify-center text-[#5A5050] hover:border-[#B8924A] hover:text-[#B8924A] transition-colors duration-300">
+                  <Icon strokeWidth={1.5} className="w-4 h-4" />
+                </Link>
+              ))}
             </div>
           </div>
 
-          {/* Col 2: Quick Links */}
+          {/* Quick Links */}
           <div>
-            <h4 className="text-white font-medium text-lg mb-6 tracking-wide">Quick Links</h4>
-            <ul className="flex flex-col gap-4 text-gray-400 text-base">
-              <li><Link href="/" className="hover:text-[#C9A96E] hover:pl-2 transition-all">Home</Link></li>
-              <li><Link href="/products" className="hover:text-[#C9A96E] hover:pl-2 transition-all">Products</Link></li>
-              <li><Link href="/about-us" className="hover:text-[#C9A96E] hover:pl-2 transition-all">About Us</Link></li>
-              <li><Link href="/cases" className="hover:text-[#C9A96E] hover:pl-2 transition-all">Cases</Link></li>
-              <li><Link href="/news" className="hover:text-[#C9A96E] hover:pl-2 transition-all">News</Link></li>
-              <li><Link href="/contact" className="hover:text-[#C9A96E] hover:pl-2 transition-all">Contact Us</Link></li>
+            <h4 className="label text-[#7A6E65] mb-6">Navigation</h4>
+            <ul className="flex flex-col gap-3.5">
+              {[
+                ['Home', '/'],
+                ['Products', '/products'],
+                ['About Us', '/about-us'],
+                ['Cases', '/cases'],
+                ['News', '/news'],
+                ['Contact Us', '/contact'],
+              ].map(([label, href]) => (
+                <li key={href}>
+                  <Link href={href} className="font-sans font-light text-[#5A5050] text-sm hover:text-[#D4AA6E] transition-colors duration-300">
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Col 3: Policies */}
+          {/* Support */}
           <div>
-            <h4 className="text-white font-medium text-lg mb-6 tracking-wide">Customer Support</h4>
-            <ul className="flex flex-col gap-4 text-gray-400 text-base">
-              <li><Link href="#" className="hover:text-[#C9A96E] hover:pl-2 transition-all">Shipping Policy</Link></li>
-              <li><Link href="#" className="hover:text-[#C9A96E] hover:pl-2 transition-all">Warranty Policy</Link></li>
-              <li><Link href="#" className="hover:text-[#C9A96E] hover:pl-2 transition-all">Returns & Exchanges</Link></li>
-              <li><Link href="#" className="hover:text-[#C9A96E] hover:pl-2 transition-all">Terms of Use</Link></li>
-              <li><Link href="#" className="hover:text-[#C9A96E] hover:pl-2 transition-all">FAQ</Link></li>
+            <h4 className="label text-[#7A6E65] mb-6">Customer Support</h4>
+            <ul className="flex flex-col gap-3.5">
+              {[
+                'Shipping Policy',
+                'Warranty Policy',
+                'Returns & Exchanges',
+                'Terms of Use',
+                'FAQ',
+              ].map((item) => (
+                <li key={item}>
+                  <Link href="#" className="font-sans font-light text-[#5A5050] text-sm hover:text-[#D4AA6E] transition-colors duration-300">
+                    {item}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Col 4: Contact */}
+          {/* Contact */}
           <div>
-            <h4 className="text-white font-medium text-lg mb-6 tracking-wide">Contact Information</h4>
-            <ul className="flex flex-col gap-5 text-gray-400 text-base">
-              <li className="flex items-start gap-3 group">
-                <MapPin strokeWidth={1.5} className="w-5 h-5 text-[#C9A96E] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                <span>Sammy Vietnam Co., Ltd.<br />Hanoi, Vietnam</span>
+            <h4 className="label text-[#7A6E65] mb-6">Contact</h4>
+            <ul className="flex flex-col gap-5">
+              <li className="flex items-start gap-3">
+                <MapPin strokeWidth={1} className="w-4 h-4 text-[#B8924A] shrink-0 mt-0.5" />
+                <span className="font-sans font-light text-[#5A5050] text-sm leading-loose">Sammy Vietnam Co., Ltd.<br />Hanoi, Vietnam</span>
               </li>
-              <li className="flex items-center gap-3 group">
-                <Phone strokeWidth={1.5} className="w-5 h-5 text-[#C9A96E] shrink-0 group-hover:scale-110 transition-transform" />
-                <div className="flex flex-col">
-                  <a href="tel:+84921999066" className="hover:text-[#fff] transition-colors">+84 921 999 066</a>
-                  <a href="tel:+84975580486" className="hover:text-[#fff] transition-colors">+84 975 580 486</a>
+              <li className="flex items-start gap-3">
+                <Phone strokeWidth={1} className="w-4 h-4 text-[#B8924A] shrink-0 mt-0.5" />
+                <div className="flex flex-col gap-1">
+                  <a href="tel:+84921999066" className="font-sans font-light text-[#5A5050] text-sm hover:text-white transition-colors duration-300">+84 921 999 066</a>
+                  <a href="tel:+84975580486" className="font-sans font-light text-[#5A5050] text-sm hover:text-white transition-colors duration-300">+84 975 580 486</a>
                 </div>
               </li>
-              <li className="flex items-center gap-3 group">
-                <Mail strokeWidth={1.5} className="w-5 h-5 text-[#C9A96E] shrink-0 group-hover:scale-110 transition-transform" />
-                <a href="mailto:export@lasantevietnam.vn" className="hover:text-[#fff] transition-colors">export@lasantevietnam.vn</a>
+              <li className="flex items-center gap-3">
+                <Mail strokeWidth={1} className="w-4 h-4 text-[#B8924A] shrink-0" />
+                <a href="mailto:export@lasantevietnam.vn" className="font-sans font-light text-[#5A5050] text-sm hover:text-white transition-colors duration-300">export@lasantevietnam.vn</a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-gray-500 text-sm">
-          <p>© 2026 La Santé Vietnam. Copyright Sammy Vietnam Co., Ltd.</p>
+        {/* Export CTA strip */}
+        <div className="mb-10 py-8 px-8 border border-[#2E2924] flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <p className="font-serif font-light text-white text-xl mb-1">Ready to source premium bedding?</p>
+            <p className="font-sans font-light text-[#5A5050] text-sm">Wholesale pricing · Private label · Export documentation</p>
+          </div>
+          <Link href="/contact" className="btn-gold whitespace-nowrap">
+            Request Export Pricing
+          </Link>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="border-t border-[#2E2924] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="font-sans font-light text-[#3A3330] text-xs tracking-wider">
+            © 2026 La Santé Vietnam — Sammy Vietnam Co., Ltd. All rights reserved.
+          </p>
           <div className="flex gap-6">
-            <Link href="#" className="hover:text-white transition-colors">Exclusive Design</Link>
-            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="#" className="font-sans font-light text-[#3A3330] text-xs tracking-wider hover:text-[#B8924A] transition-colors duration-300">Privacy Policy</Link>
+            <Link href="#" className="font-sans font-light text-[#3A3330] text-xs tracking-wider hover:text-[#B8924A] transition-colors duration-300">Exclusive Design</Link>
           </div>
         </div>
       </div>

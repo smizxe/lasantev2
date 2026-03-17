@@ -1,63 +1,78 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
+const STATS = [
+  { num: '10+',  label: 'Years in Operation'        },
+  { num: '500+', label: 'Distribution Partners'     },
+  { num: '1M+',  label: 'Products Delivered Yearly' },
+  { num: '100%', label: 'Closed-Loop Manufacturing' },
+];
+
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-white overflow-hidden">
+    <section id="about" className="py-28 bg-[#FAF7F2] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Images Grid */}
-          <div className="grid grid-cols-2 gap-4 relative">
-            <img 
-              src="/images/about-factory.png" 
-              alt="Factory" 
-              className="w-full h-64 object-cover rounded-2xl shadow-sm mt-8 transition-transform hover:scale-105 duration-500"
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+
+          {/* Images — editorial overlapping grid */}
+          <div className="relative">
+            <img
+              src="/images/about-factory.png"
+              alt="La Santé manufacturing facility"
+              className="w-full h-[420px] object-cover"
             />
-            <img 
-              src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80&w=800" 
-              alt="Showroom" 
-              className="w-full h-72 object-cover rounded-2xl shadow-sm transition-transform hover:scale-105 duration-500"
+            <img
+              src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80&w=800"
+              alt="La Santé showroom"
+              className="absolute -bottom-10 -right-6 w-2/3 h-56 object-cover border-4 border-[#FAF7F2] shadow-2xl hidden md:block"
             />
-            <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl hidden md:block animate-bounce">
-              <p className="font-serif text-[#C9A96E] text-5xl tracking-tight mb-1">10+</p>
-              <p className="text-gray-500 font-medium text-base">Years Experience</p>
+            {/* Floating badge */}
+            <div className="absolute -top-4 -left-4 bg-[#1A1614] text-white px-6 py-5 hidden md:block">
+              <p className="font-serif font-light text-5xl text-[#D4AA6E] leading-none">10+</p>
+              <p className="label text-[#9A8E85] mt-1" style={{fontSize:'0.62rem'}}>Years of Excellence</p>
             </div>
           </div>
 
-          {/* Text Content */}
-          <div>
-            <span className="text-[#C9A96E] text-base font-medium uppercase tracking-wider mb-3 block animate-fade-in-up">About Us</span>
-            <h2 className="font-serif font-medium text-4xl lg:text-5xl text-[#2d2d2d] tracking-tight mb-6 transition-all hover:text-[#C9A96E] duration-300">
-              Sammy Vietnam Co., Ltd.
+          {/* Copy */}
+          <div className="lg:pl-6">
+            <p className="label text-[#B8924A] mb-5">— About the Manufacturer</p>
+            <h2 className="font-serif font-light text-[#1A1614] leading-[0.95] mb-8" style={{fontSize:'clamp(2.6rem,4vw,4rem)'}}>
+              Sammy Vietnam Co., Ltd.<br />
+              <span className="text-[#B8924A]">Maker of La Santé &amp; LaTalia</span>
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              We exclusively manufacture and distribute two premium brands: <strong>LASANTE'</strong> and <strong>LATALIA</strong> from Latalia UK. We specialize in providing modern, elegant French-style blankets, sheets, pillows, and mattresses.
+
+            <p className="font-sans font-light text-[#4A3F38] text-lg leading-loose mb-5">
+              We are the exclusive manufacturer and distributor of two premium brands —
+              <strong className="font-normal text-[#2E2924]"> La Santé De Paris</strong> and{' '}
+              <strong className="font-normal text-[#2E2924]"> LaTalia (UK)</strong>. Our product range covers
+              blankets, bedsheets, pillows, and mattresses crafted in authentic French style.
             </p>
-            <p className="text-gray-600 text-lg leading-relaxed mb-10">
-              In Vietnam, La Santé proudly applies modern, closed-loop automated production technology. Every process, from cotton production and quilting to packaging, is strictly controlled to ensure ultimate hygiene and absolute safety.
+            <p className="font-sans font-light text-[#4A3F38] text-lg leading-loose mb-10">
+              Our Hanoi facility runs a fully closed-loop, automated production system — from raw cotton
+              processing and quilting to final packaging — guaranteeing hygiene, consistency, and export-grade
+              quality in every single unit. <strong className="font-normal text-[#2E2924]">No intermediaries.
+              Direct from our factory to your market.</strong>
             </p>
-            
-            <div className="grid grid-cols-2 gap-8 mb-10 border-t border-gray-100 pt-10">
-              <div className="group cursor-default">
-                <p className="font-serif text-[#2d2d2d] text-4xl tracking-tight mb-1 group-hover:text-[#C9A96E] transition-colors">500+</p>
-                <p className="text-gray-500 text-base font-medium">Distributors</p>
-              </div>
-              <div className="group cursor-default">
-                <p className="font-serif text-[#2d2d2d] text-4xl tracking-tight mb-1 group-hover:text-[#C9A96E] transition-colors">Safety</p>
-                <p className="text-gray-500 text-base font-medium">For All Skin Types</p>
-              </div>
-              <div className="group cursor-default">
-                <p className="font-serif text-[#2d2d2d] text-4xl tracking-tight mb-1 group-hover:text-[#C9A96E] transition-colors">1M+</p>
-                <p className="text-gray-500 text-base font-medium">Products Delivered</p>
-              </div>
-              <div className="group cursor-default">
-                <p className="font-serif text-[#2d2d2d] text-4xl tracking-tight mb-1 group-hover:text-[#C9A96E] transition-colors">100%</p>
-                <p className="text-gray-500 text-base font-medium">Closed-Loop Tech</p>
-              </div>
+
+            {/* Stats grid */}
+            <div className="grid grid-cols-2 gap-0 border border-[#E8DFD4] mb-10">
+              {STATS.map((s, i) => (
+                <div
+                  key={s.label}
+                  className={`p-6 ${i % 2 === 0 ? 'border-r border-[#E8DFD4]' : ''} ${i < 2 ? 'border-b border-[#E8DFD4]' : ''} group cursor-default`}
+                >
+                  <p className="font-serif font-light text-[#B8924A] text-4xl leading-none mb-1 group-hover:text-[#1A1614] transition-colors duration-300">{s.num}</p>
+                  <p className="label text-[#7A6E65]" style={{fontSize:'0.65rem'}}>{s.label}</p>
+                </div>
+              ))}
             </div>
 
-            <Link href="/about-us" className="inline-flex items-center gap-2 text-[#2d2d2d] font-medium text-lg hover:text-[#C9A96E] hover:gap-3 transition-all relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-[#C9A96E] after:transition-all hover:after:w-full">
-              Learn More About Us <ArrowRight strokeWidth={1.5} className="w-5 h-5" />
+            <Link
+              href="/about-us"
+              className="inline-flex items-center gap-3 font-sans text-[12px] font-500 tracking-[0.14em] uppercase text-[#2E2924] hover:text-[#B8924A] transition-colors duration-300 group"
+            >
+              Our Full Story
+              <ArrowRight strokeWidth={1.5} className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>

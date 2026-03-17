@@ -1,47 +1,72 @@
-import { Feather, Settings, ShieldCheck, Globe } from 'lucide-react';
+import { DollarSign, ShieldCheck, Factory, Headphones } from 'lucide-react';
+
+const reasons = [
+  {
+    num: '01',
+    icon: DollarSign,
+    title: 'Direct-from-Manufacturer Pricing',
+    desc: 'No intermediaries. Source at competitive FOB prices with full quality oversight from our Hanoi factory to your warehouse.',
+  },
+  {
+    num: '02',
+    icon: ShieldCheck,
+    title: 'EU-Certified Quality Standards',
+    desc: 'European TÜV health certification and Quatest 1 inspection ensure every shipment clears customs and meets international retail requirements.',
+  },
+  {
+    num: '03',
+    icon: Factory,
+    title: 'Scalable Production Capacity',
+    desc: 'From boutique hotel supply to mass retail rollouts — our automated, closed-loop facility handles any volume with consistent quality.',
+  },
+  {
+    num: '04',
+    icon: Headphones,
+    title: 'Dedicated Export Support',
+    desc: 'Your account manager handles export documentation, logistics coordination, and compliance paperwork so you focus on selling.',
+  },
+];
 
 export default function WhyChooseUs() {
-  const reasons = [
-    {
-      icon: <Feather strokeWidth={1.5} className="w-8 h-8 text-[#C9A96E] group-hover:text-[#C9A96E] transition-colors" />,
-      title: "Premium Materials",
-      desc: "Global sourcing of raw materials, authentic French design applications, combining high-density woven Tencel, modal, and cotton."
-    },
-    {
-      icon: <Settings strokeWidth={1.5} className="w-8 h-8 text-[#C9A96E] group-hover:text-[#C9A96E] transition-colors" />,
-      title: "Advanced Technology",
-      desc: "Modern closed-loop automated manufacturing system ensures precision, durability, and flawless finishes."
-    },
-    {
-      icon: <ShieldCheck strokeWidth={1.5} className="w-8 h-8 text-[#C9A96E] group-hover:text-[#C9A96E] transition-colors" />,
-      title: "Certified Quality",
-      desc: "European TUV health protection certification and Quatest 1 inspection, ensuring absolute safety and eco-friendliness."
-    },
-    {
-      icon: <Globe strokeWidth={1.5} className="w-8 h-8 text-[#C9A96E] group-hover:text-[#C9A96E] transition-colors" />,
-      title: "Export Standards",
-      desc: "Seamless B2B logistics and dedicated service support for domestic and international distributors."
-    }
-  ];
-
   return (
-    <section className="py-24 bg-[#f8f8f8]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="font-serif font-medium text-4xl lg:text-5xl text-[#2d2d2d] tracking-tight mb-4 hover:text-[#C9A96E] transition-colors">Why Choose Lasante?</h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">Setting the global standard for premium bedding manufacturing and dedicated service.</p>
+    <section className="py-28 bg-[#1A1614] relative overflow-hidden">
+      {/* Subtle dot grid */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.04]"
+        style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '28px 28px' }}
+      />
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+        {/* Header */}
+        <div className="max-w-2xl mb-20">
+          <p className="label text-[#B8924A] mb-5">— Why Partner With Us</p>
+          <h2 className="font-serif font-light text-white leading-[0.92]" style={{fontSize:'clamp(2.6rem,4.5vw,4.2rem)'}}>
+            The Manufacturer<br />
+            <span className="text-[#D4AA6E]">Built for Global Trade</span>
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {reasons.map((item, idx) => (
-            <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group border border-transparent hover:border-[#C9A96E]/30">
-              <div className="w-16 h-16 rounded-full bg-[#f8f8f8] flex items-center justify-center mb-6 group-hover:bg-[#C9A96E]/10 transition-colors transform group-hover:rotate-6">
-                {item.icon}
+        {/* Reasons grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-[#2E2924]">
+          {reasons.map((r, idx) => {
+            const Icon = r.icon;
+            return (
+              <div
+                key={idx}
+                className={`p-10 lg:p-12 border-[#2E2924] group hover:bg-[#2E2924] transition-colors duration-300
+                  ${idx % 2 === 0 ? 'border-r' : ''}
+                  ${idx < 2 ? 'border-b' : ''}
+                `}
+              >
+                <div className="flex items-start justify-between mb-8">
+                  <span className="font-serif font-light text-[#3A3330] text-6xl leading-none group-hover:text-[#4A3F38] transition-colors duration-300">{r.num}</span>
+                  <Icon strokeWidth={1} className="w-7 h-7 text-[#B8924A] mt-2" />
+                </div>
+                <h3 className="font-serif font-light text-white text-2xl mb-4 group-hover:text-[#D4AA6E] transition-colors duration-300">{r.title}</h3>
+                <p className="font-sans font-light text-[#7A6E65] text-base leading-loose group-hover:text-[#9A8E85] transition-colors duration-300">{r.desc}</p>
               </div>
-              <h3 className="font-medium text-xl text-[#2d2d2d] mb-3 group-hover:text-[#C9A96E] transition-colors">{item.title}</h3>
-              <p className="text-gray-600 text-lg">{item.desc}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

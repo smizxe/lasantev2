@@ -1,34 +1,31 @@
-import { Award, Shield, FileCheck2, Hotel, MapPinCheckInside } from 'lucide-react';
+import { Award, Shield, FileCheck2, Hotel, Globe } from 'lucide-react';
+
+const CERTS = [
+  { icon: Award,       label: 'European TÜV',     sub: 'Health Certification'    },
+  { icon: Shield,      label: 'Quatest 1',         sub: 'Quality Inspection'      },
+  { icon: FileCheck2,  label: 'Skin-Safe Tested',  sub: 'All Ages & Skin Types'   },
+  { icon: Hotel,       label: 'Hospitality Grade', sub: '5-Star Hotel Supply'     },
+  { icon: Globe,       label: 'Export Ready',      sub: 'Asia · Europe · Beyond'  },
+];
 
 export default function Certifications() {
   return (
-    <section className="py-16 border-y border-gray-100 bg-white overflow-hidden">
+    <section className="py-10 bg-[#FAF7F2] border-b border-[#E8DFD4]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <p className="text-center text-gray-400 font-medium text-sm tracking-widest uppercase mb-8">
-          Trusted Partners & Quality Certifications
+        <p className="label text-center text-[#B8924A] mb-8">
+          Certified for Global Markets
         </p>
-        {/* Added animate-scroll or standard flex gap for logos */}
-        <div className="flex items-center justify-between gap-12 overflow-x-auto pb-4 scrollbar-hide grayscale hover:grayscale-0 transition-all duration-500 opacity-60 hover:opacity-100">
-          <div className="flex items-center gap-2 min-w-max hover:text-[#C9A96E] transition-colors cursor-default">
-            <Award className="w-8 h-8" />
-            <span className="font-serif text-2xl font-medium">European TUV</span>
-          </div>
-          <div className="flex items-center gap-2 min-w-max hover:text-[#C9A96E] transition-colors cursor-default">
-            <Shield className="w-8 h-8" />
-            <span className="font-serif text-2xl font-medium">Quatest 1</span>
-          </div>
-          <div className="flex items-center gap-2 min-w-max hover:text-[#C9A96E] transition-colors cursor-default">
-            <FileCheck2 className="w-8 h-8" />
-            <span className="font-serif text-2xl font-medium">Health Safety</span>
-          </div>
-          <div className="flex items-center gap-2 min-w-max hover:text-[#C9A96E] transition-colors cursor-default">
-            <Hotel className="w-8 h-8" />
-            <span className="font-serif text-2xl font-medium">Hospitality</span>
-          </div>
-          <div className="flex items-center gap-2 min-w-max hover:text-[#C9A96E] transition-colors cursor-default">
-            <MapPinCheckInside className="w-8 h-8" />
-            <span className="font-serif text-2xl font-medium">500+ Showrooms</span>
-          </div>
+        <div className="flex items-start justify-between gap-8 overflow-x-auto scrollbar-hide">
+          {CERTS.map(({ icon: Icon, label, sub }) => (
+            <div key={label} className="flex flex-col items-center gap-2 min-w-[110px] text-center group cursor-default">
+              <Icon
+                strokeWidth={1}
+                className="w-7 h-7 text-[#B8924A] group-hover:scale-110 transition-transform duration-300"
+              />
+              <p className="font-serif font-light text-[#2E2924] text-lg leading-tight">{label}</p>
+              <p className="label text-[#7A6E65]" style={{fontSize:'0.6rem'}}>{sub}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
