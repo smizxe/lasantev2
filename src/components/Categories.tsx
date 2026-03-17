@@ -5,25 +5,25 @@ const categories = [
   {
     name: 'Winter Blankets',
     desc: 'French-weave wool & fleece',
-    image: 'https://lasantevietnam.vn/wp-content/uploads/2026/01/z7405581111937_5e70f69d688dbdfd0a9068dd11b6b633-247x296.jpg',
+    image: '/images/categories/blanket.png',
     href: '/products',
   },
   {
     name: 'Premium Bedsheets',
     desc: 'Tencel · Modal · Egyptian Cotton',
-    image: 'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/5bab247f-35d9-400d-a82b-fd87cfe913d2_1600w.webp',
+    image: '/images/categories/bedsheets.png',
     href: '/products',
   },
   {
     name: 'Ergonomic Pillows',
     desc: 'Orthopaedic & soft-fill options',
-    image: 'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c543a9e1-f226-4ced-80b0-feb8445a75b9_1600w.jpg',
+    image: '/images/categories/pillow.png',
     href: '/products',
   },
   {
     name: 'Quality Mattresses',
     desc: 'Hotel-grade comfort & support',
-    image: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&q=80&w=600',
+    image: '/images/categories/mattress.png',
     href: '/products',
   },
 ];
@@ -51,14 +51,14 @@ export default function Categories() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {categories.map((cat, idx) => (
             <Link
               key={idx}
               href={cat.href}
-              className={`group relative overflow-hidden bg-[#1A1614] ${idx === 0 ? 'lg:col-span-2' : ''}`}
+              className="group relative overflow-hidden bg-[#1A1614]"
             >
-              <div className={`relative overflow-hidden ${idx === 0 ? 'aspect-[16/9] lg:aspect-[4/3]' : 'aspect-[3/4]'}`}>
+              <div className="relative overflow-hidden aspect-[3/4]">
                 <img
                   src={cat.image}
                   alt={cat.name}
