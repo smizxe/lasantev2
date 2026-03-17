@@ -35,7 +35,7 @@ body {
 }
 
 ::selection {
-  background-color: #f8c131;
+  background-color: #C9A96E;
   color: #ffffff;
 }
 
@@ -47,10 +47,10 @@ body {
     font-family: var(--font-serif), serif;
   }
   .gradient-primary {
-    background: linear-gradient(to right, #f37435, #f8c131);
+    background: linear-gradient(to right, #C9A96E, #E6CD8F);
   }
   .text-gradient {
-    background: linear-gradient(to right, #f37435, #f8c131);
+    background: linear-gradient(to right, #C9A96E, #E6CD8F);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }

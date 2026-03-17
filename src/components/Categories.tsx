@@ -4,24 +4,24 @@ import Link from 'next/link';
 export default function Categories() {
   const categories = [
     {
-      name: "Chăn Mùa Đông",
+      name: "Winter Blankets",
       image: "https://lasantevietnam.vn/wp-content/uploads/2026/01/z7405581111937_5e70f69d688dbdfd0a9068dd11b6b633-247x296.jpg",
-      link: "#"
+      link: "/products"
     },
     {
-      name: "Ga Giường Cao Cấp",
+      name: "Premium Bedsheets",
       image: "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/5bab247f-35d9-400d-a82b-fd87cfe913d2_1600w.webp",
-      link: "#"
+      link: "/products"
     },
     {
-      name: "Gối Công Thái Học",
+      name: "Ergonomic Pillows",
       image: "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c543a9e1-f226-4ced-80b0-feb8445a75b9_1600w.jpg",
-      link: "#"
+      link: "/products"
     },
     {
-      name: "Đệm Chất Lượng Chuyên Sâu",
+      name: "Quality Mattresses",
       image: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&q=80&w=600",
-      link: "#"
+      link: "/products"
     }
   ];
 
@@ -29,8 +29,8 @@ export default function Categories() {
     <section className="py-24 bg-[#f8f8f8]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-16">
-          <span className="text-[#c9a96e] text-base font-medium uppercase tracking-wider mb-3 block animate-fade-in-up">DANH MỤC</span>
-          <h2 className="font-serif font-medium text-4xl lg:text-5xl text-[#2d2d2d] tracking-tight hover:text-[#f37435] transition-colors duration-300">Sản Phẩm Của Chúng Tôi</h2>
+          <span className="text-[#C9A96E] text-base font-medium uppercase tracking-wider mb-3 block animate-fade-in-up">CATEGORIES</span>
+          <h2 className="font-serif font-medium text-4xl lg:text-5xl text-[#2d2d2d] tracking-tight hover:text-[#C9A96E] transition-colors duration-300">Our Products</h2>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
@@ -44,11 +44,11 @@ export default function Categories() {
                 />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors duration-300"></div>
                 <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-md">
-                  <ArrowRight strokeWidth={1.5} className="w-5 h-5 text-[#2d2d2d] group-hover:text-[#f37435]" />
+                  <ArrowRight strokeWidth={1.5} className="w-5 h-5 text-[#2d2d2d] group-hover:text-[#C9A96E]" />
                 </div>
               </div>
               <div className="p-6 text-center">
-                <h3 className="font-medium text-xl text-[#2d2d2d] group-hover:text-[#f37435] transition-colors">{cat.name}</h3>
+                <h3 className="font-medium text-xl text-[#2d2d2d] group-hover:text-[#C9A96E] transition-colors">{cat.name}</h3>
               </div>
             </Link>
           ))}

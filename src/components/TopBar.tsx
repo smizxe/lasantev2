@@ -19,7 +19,7 @@ export default function TopBar() {
         </div>
         <div className="h-4 w-px bg-gray-600"></div>
         <button className="flex items-center gap-1 hover:text-white transition-colors">
-          VN <ChevronDown strokeWidth={1.5} className="w-3 h-3" />
+          EN <ChevronDown strokeWidth={1.5} className="w-3 h-3" />
         </button>
       </div>
     </div>
