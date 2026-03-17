@@ -1,6 +1,9 @@
-import Link from 'next/link';
+import { Link } from '../i18n/routing';
+import { useTranslations } from 'next-intl';
 
 export default function Hero() {
+  const t = useTranslations('Hero');
+
   return (
     <section className="relative min-h-[92vh] w-full flex items-end overflow-hidden bg-[#1A1614]">
       {/* Background image */}
@@ -21,39 +24,38 @@ export default function Hero() {
 
         {/* Label */}
         <p className="label text-[#B8924A] mb-6 opacity-0 animate-fade-up delay-100" style={{animationFillMode:'forwards'}}>
-          — Lasante De Paris &nbsp;·&nbsp; L'Art Du Sommeil —
+          — {t('label')} —
         </p>
 
         {/* Main headline */}
         <h1 className="font-serif font-light text-white leading-[0.92] tracking-[-0.02em] mb-8 opacity-0 animate-fade-up delay-200" style={{fontSize:'clamp(3.2rem,8vw,7.5rem)', animationFillMode:'forwards'}}>
-          Parisian Elegance.<br />
-          <span className="text-gradient-gold">Vietnamese Precision.</span><br />
-          Global Distribution.
+          {t('title_1')}<br />
+          <span className="text-gradient-gold">{t('title_2')}</span><br />
+          {t('title_3')}
         </h1>
 
         {/* Sub-copy — export pitch */}
         <p className="font-sans font-light text-[#C8B8A8] text-lg lg:text-xl max-w-2xl mb-12 leading-relaxed opacity-0 animate-fade-up delay-300" style={{animationFillMode:'forwards'}}>
-          We manufacture over <strong className="text-white font-normal">1,000,000 premium bedding products</strong> annually —
-          supplying hotels, retail chains, and distribution partners across Asia, Europe, and beyond.
-          Source directly from the manufacturer.
+          {t('desc_part1')}<strong className="text-white font-normal">{t('desc_bold')}</strong>
+          {t('desc_part2')}
         </p>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-start gap-4 opacity-0 animate-fade-up delay-400" style={{animationFillMode:'forwards'}}>
           <Link href="/contact" className="btn-gold">
-            Request Export Pricing
+            {t('btn_pricing')}
           </Link>
           <Link href="/products" className="btn-outline">
-            Explore Collections
+            {t('btn_collections')}
           </Link>
         </div>
 
         {/* Stats strip */}
         <div className="mt-16 pt-8 border-t border-white/10 grid grid-cols-3 gap-8 max-w-lg opacity-0 animate-fade-up delay-500" style={{animationFillMode:'forwards'}}>
           {[
-            { num: '10+',   label: 'Years Experience' },
-            { num: '500+',  label: 'Global Partners'  },
-            { num: '1M+',   label: 'Units Delivered'  },
+            { num: t('stats.exp'),   label: t('stats.exp_label') },
+            { num: t('stats.partners'),  label: t('stats.partners_label')  },
+            { num: t('stats.units'),   label: t('stats.units_label')  },
           ].map((s) => (
             <div key={s.label}>
               <p className="font-serif font-light text-3xl text-[#D4AA6E] leading-none mb-1">{s.num}</p>

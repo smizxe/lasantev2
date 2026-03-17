@@ -1,10 +1,11 @@
-import Link from 'next/link';
+import { Link } from '../i18n/routing';
 import { ArrowUpRight } from 'lucide-react';
+import FadeIn from './animations/FadeIn';
 
 export default function PromoBanner() {
   return (
     <section className="py-16 bg-[#FAF7F2]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <FadeIn className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="relative overflow-hidden h-[420px] lg:h-[500px] flex items-end group">
           <img
             src="/images/products-banner.png"
@@ -37,7 +38,7 @@ export default function PromoBanner() {
             </div>
           </div>
         </div>
-      </div>
+      </FadeIn>
     </section>
   );
 }

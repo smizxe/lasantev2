@@ -1,5 +1,5 @@
 import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '../i18n/routing';
 
 export default function Footer() {
   return (

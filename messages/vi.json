@@ -1,0 +1,47 @@
+{
+  "TopBar": {
+    "partner": "Đối Tác Xuất Khẩu Chính Thức · Việt Nam → Quốc Tế"
+  },
+  "Navigation": {
+    "home": "Trang Chủ",
+    "products": "Sản Phẩm",
+    "about": "Giới Thiệu",
+    "cases": "Dự Án",
+    "news": "Tin Tức",
+    "contact": "Liên Hệ",
+    "pricing": "Nhận Báo Giá Xuất Khẩu"
+  },
+  "Hero": {
+    "label": "La Santé De Paris · L'Art du Sommeil",
+    "title_1": "Sự Thanh Lịch Paris.",
+    "title_2": "Sự Chính Xác Việt Nam.",
+    "title_3": "Phân Phối Toàn Cầu.",
+    "desc_part1": "Chúng tôi sản xuất hơn ",
+    "desc_bold": "1.000.000 sản phẩm chăn ga gối đệm cao cấp",
+    "desc_part2": " mỗi năm — cung cấp cho các khách sạn, chuỗi bán lẻ và đối tác phân phối khắp Châu Á, Châu Âu và hơn thế nữa. Nguồn hàng trực tiếp từ nhà máy.",
+    "btn_pricing": "Nhận Báo Giá Xuất Khẩu",
+    "btn_collections": "Khám Phá Bộ Sưu Tập",
+    "stats": {
+      "exp": "10+",
+      "exp_label": "Năm Kinh Nghiệm",
+      "partners": "500+",
+      "partners_label": "Đối Tác Toàn Cầu",
+      "units": "1M+",
+      "units_label": "Sản Phẩm Đã Giao"
+    }
+  },
+  "Categories": {
+    "productCategories": "Danh Mục Sản Phẩm",
+    "allProducts": "Tất Cả Sản Phẩm",
+    "duvetCover": "Ga Phủ",
+    "bedsheets": "Ga Trải Giường",
+    "pillow": "Ruột Gối",
+    "mattressProtector": "Bảo Vệ Đệm",
+    "blanket": "Chăn Đông",
+    "beddingSet": "Bộ Chăn Ga"
+  },
+  "ProductCard": {
+    "contactUs": "Liên hệ với chúng tôi",
+    "requestQuote": "Nhận Báo Giá"
+  }
+}

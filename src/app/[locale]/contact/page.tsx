@@ -1,7 +1,7 @@
 import Header from '@/components/Header';
 import TopBar from '@/components/TopBar';
 import Footer from '@/components/Footer';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { ChevronRight, Home, MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 export const metadata = {

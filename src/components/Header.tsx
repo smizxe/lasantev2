@@ -1,18 +1,20 @@
 'use client';
 import { Search, Menu, X } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '../i18n/routing';
+import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
 const NAV = [
-  { label: 'Home',       href: '/'         },
-  { label: 'Products',   href: '/products' },
-  { label: 'About Us',   href: '/about-us' },
-  { label: 'Cases',      href: '/cases'    },
-  { label: 'News',       href: '/news'     },
-  { label: 'Contact',    href: '/contact'  },
+  { key: 'home',     href: '/'         },
+  { key: 'products', href: '/products' },
+  { key: 'about',    href: '/about-us' },
+  { key: 'cases',    href: '/cases'    },
+  { key: 'news',     href: '/news'     },
+  { key: 'contact',  href: '/contact'  },
 ];
 
 export default function Header() {
+  const t = useTranslations('Navigation');
   const [open, setOpen] = useState(false);
 
   return (
@@ -32,7 +34,7 @@ export default function Header() {
                 href={item.href}
                 className="font-sans text-[12px] font-500 tracking-[0.14em] uppercase text-[#4A3F38] hover:text-[#B8924A] transition-colors duration-300 relative group"
               >
-                {item.label}
+                {t(item.key)}
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#B8924A] group-hover:w-full transition-all duration-300" />
               </Link>
             ))}
@@ -47,7 +49,7 @@ export default function Header() {
               href="/contact"
               className="hidden lg:inline-flex btn-gold text-[11px] py-2.5 px-6"
             >
-              Request Export Pricing
+              {t('pricing')}
             </Link>
             <button
               className="lg:hidden text-[#4A3F38] hover:text-[#B8924A] transition-colors"
@@ -79,13 +81,13 @@ export default function Header() {
                   onClick={() => setOpen(false)}
                   className="font-serif text-2xl font-light text-[#2E2924] hover:text-[#B8924A] transition-colors"
                 >
-                  {item.label}
+                  {t(item.key)}
                 </Link>
               ))}
             </nav>
             <div className="mt-auto pt-8 border-t border-[#E8DFD4]">
               <Link href="/contact" onClick={() => setOpen(false)} className="btn-gold w-full justify-center text-[11px]">
-                Request Export Pricing
+                {t('pricing')}
               </Link>
             </div>
           </div>

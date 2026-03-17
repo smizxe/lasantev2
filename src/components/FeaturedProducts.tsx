@@ -1,5 +1,6 @@
 import { ArrowUpRight, Star } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '../i18n/routing';
+import FadeIn from './animations/FadeIn';
 
 const products = [
   {
@@ -36,7 +37,7 @@ const products = [
 export default function FeaturedProducts() {
   return (
     <section id="products" className="py-28 bg-[#FAF7F2]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <FadeIn className="max-w-7xl mx-auto px-6 lg:px-12">
 
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
@@ -105,7 +106,7 @@ export default function FeaturedProducts() {
             <ArrowUpRight strokeWidth={1.5} className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </Link>
         </div>
-      </div>
+      </FadeIn>
     </section>
   );
 }

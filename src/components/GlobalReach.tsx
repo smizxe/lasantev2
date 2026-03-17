@@ -1,5 +1,6 @@
-import Link from 'next/link';
+import { Link } from '../i18n/routing';
 import { ArrowUpRight } from 'lucide-react';
+import FadeIn from './animations/FadeIn';
 
 const MARKETS = [
   { region: 'Vietnam', detail: '63 / 63 provinces · 500+ showrooms' },
@@ -17,7 +18,7 @@ export default function GlobalReach() {
         style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '28px 28px' }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+      <FadeIn className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
           {/* Left */}
@@ -69,7 +70,7 @@ export default function GlobalReach() {
             </div>
           ))}
         </div>
-      </div>
+      </FadeIn>
     </section>
   );
 }

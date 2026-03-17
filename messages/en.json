@@ -1,0 +1,47 @@
+{
+  "TopBar": {
+    "partner": "Official Export Partner · Vietnam → World"
+  },
+  "Navigation": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About Us",
+    "cases": "Cases",
+    "news": "News",
+    "contact": "Contact",
+    "pricing": "Request Export Pricing"
+  },
+  "Hero": {
+    "label": "La Santé De Paris · L'Art du Sommeil",
+    "title_1": "Parisian Elegance.",
+    "title_2": "Vietnamese Precision.",
+    "title_3": "Global Distribution.",
+    "desc_part1": "We manufacture over ",
+    "desc_bold": "1,000,000 premium bedding products",
+    "desc_part2": " annually — supplying hotels, retail chains, and distribution partners across Asia, Europe, and beyond. Source directly from the manufacturer.",
+    "btn_pricing": "Request Export Pricing",
+    "btn_collections": "Explore Collections",
+    "stats": {
+      "exp": "10+",
+      "exp_label": "Years Experience",
+      "partners": "500+",
+      "partners_label": "Global Partners",
+      "units": "1M+",
+      "units_label": "Units Delivered"
+    }
+  },
+  "Categories": {
+    "productCategories": "Product Categories",
+    "allProducts": "All Products",
+    "duvetCover": "Duvet Cover",
+    "bedsheets": "Bedsheets",
+    "pillow": "Pillow",
+    "mattressProtector": "Mattress Protector",
+    "blanket": "Blanket",
+    "beddingSet": "Bedding Set"
+  },
+  "ProductCard": {
+    "contactUs": "Contact Us",
+    "requestQuote": "Request Quote"
+  }
+}
